@@ -260,7 +260,7 @@ class ASCT_focusRestoration(BasePipeline):
         fl_measurements[
             ["rel_max_intensity", "rel_min_intensity", "rel_mean_intensity"]
         ] = fl_measurements[["max_intensity", "min_intensity", "mean_intensity"]].div(
-            fl_measurements["background"], axis=0
+            fl_measurements["background"] + 1.0, axis=0
         )
 
         # 4.4 Object tracking (if enabled)
